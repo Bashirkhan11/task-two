@@ -22,7 +22,7 @@ export default function Navbar(props) {
 
   return (
     <>
-      <nav className={`${props.state === 'dark'? 'bg-black': 'bg-[#f3f3f3]'} w-full fixed h-[80px] flex z-10 justify-between items-center px-4 md:px-8`}>
+      <nav className={`${props.state === 'dark'? 'bg-black': 'bg-[#f3f3f3]'} w-full fixed top-0 left-0 right-0 h-[80px] flex z-10 justify-between items-center px-4 md:px-8`}>
         <div>
           <img className="w-[120px] md:w-[100px]" src="images/logo.png" alt="Logo" />
         </div>
@@ -64,12 +64,12 @@ export default function Navbar(props) {
             md:hidden absolute top-[80px] font-bold left-0 right-0 z-10 p-4 text-white`}
           >
           <ul className="space-y-4 flex flex-col justify-center items-center">
-            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black">Home</li>
-            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black">About</li>
-            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black">Properties</li>
-            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black">Services</li>
-            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black">Testimonials</li>
-            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black">Contact</li>
+            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black"  onClick={(e) => scrollToSection(e, 'home')}>Home</li>
+            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black" onClick={(e) => scrollToSection(e, 'about')}>About</li>
+            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black" onClick={(e) => scrollToSection(e, 'property')}>Properties</li>
+            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black" onClick={(e) => scrollToSection(e, 'services')}>Services</li>
+            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black" onClick={(e) => scrollToSection(e, 'testimonials')}>Testimonials</li>
+            <li className="text-lg pr-[40%] pl-[40%] pt-2 rounded pb-2  hover:bg-red-700 hover:text-black" onClick={(e) => scrollToSection(e, 'contact')}>Contact</li>
           </ul>
         </div>
 

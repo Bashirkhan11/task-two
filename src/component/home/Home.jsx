@@ -5,7 +5,7 @@ export default function Home(props) {
 
   return (
     <>
-      <div id="home" className={`${props.state === 'dark'? 'bg-black':' bg-white'} `}>
+      <div id="home" className={`${props.state === 'dark'? 'bg-black':' bg-white'} mt-[180px]`}>
         <section
           className="w-[95%] h-[600px] bg-cover bg-center rounded-xl flex justify-center items-start flex-col  m-auto  lg:px-28 px-10 gap-7 z-20"
           style={{ backgroundImage: "url(images/home.webp)" }}
