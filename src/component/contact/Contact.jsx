@@ -8,7 +8,7 @@ export default function Contact(props) {
     })
   },[]);
   return (
-    <div className={`${props.state === 'dark'?'bg-gray-800':'bg-red-100'} mt-[5%] lg:w-[95%] m-auto rounded-xl pt-10 lg:flex`}>
+    <div id='contact' className={`${props.state === 'dark'?'bg-gray-800':'bg-red-100'} mt-[5%] lg:w-[95%] m-auto rounded-xl pt-10 lg:flex`}>
       <div  data-aos='zoom-in' className={`${props.state === 'dark'?'bg-black':'bg-white'} mx-[5%] flex flex-col rounded-xl lg:mb-[5%] lg:w-[80%]`}>
         <h1 className={`${props.state === 'dark'?'text-white':''} text-2xl font-semibold mx-8 mt-5`}>Send us a message today</h1>
         <input className='border-2 mt-5 px-2 py-3 rounded-xl mx-8' type="text" placeholder='Enter your full name here'/>

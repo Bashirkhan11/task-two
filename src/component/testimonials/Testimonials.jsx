@@ -13,16 +13,16 @@ export default function Testimonials(props) {
 
   return (
     <>
-        <div className='mt-[5%] w-[95%] rounded-2xl bg-trnasparent m-auto pt-10 px-[5%]  flex flex-col justify-start'>
-      <div className='mt-[2%] mb-[5%] ml-[15%]'>
+        <div id='testimonials' className='mt-[5%] w-[95%] bg-trnasparent m-auto'>
+      <div className='flex flex-col justify-center items-start gap-4 mx-10 mb-5'>
         <h1 data-aos='zoom-in' className={`${props.state === 'dark' ?'text-white':'text-red-600'} `}>OUR CLIENTS</h1>
         <h1 data-aos='zoom-in' className={`${props.state === 'dark' ?'text-white':'text-black'} text-4xl font-semibold`}>What are our clients saying about us</h1>
       </div>
 
-      <div className='flex flex-wrap  gap-[5%] justify-center  '>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mx-10'>
       {Testimonialsdata.map(value=>{
           return(
-            <div data-aos='zoom-in' key={value.id} id='card' className={`${props.state === 'dark' ?' bg-gray-800':' bg-white hover:bg-red-100'} w-full lg:w-[250px] h-[250px] lg:h-[300px] mt-[3%] rounded-xl`}>
+            <div data-aos='zoom-in' key={value.id} id='card' className={`${props.state === 'dark' ?' bg-gray-800':' bg-white hover:bg-red-100'} w-full h-[250px] lg:h-[300px] mt-[3%] rounded-xl`}>
             <div className=''>
                 <div className='flex justify-start items-center'>
                    <div className="w-[70px] h-[70px] bg-red-100 mt-7 mx-3 rounded-[50%]">

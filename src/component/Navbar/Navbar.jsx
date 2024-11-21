@@ -6,6 +6,15 @@ export default function Navbar(props) {
   // State to manage mobile menu toggle
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    window.scrollTo({
+      top: element.offsetTop - 50, // Adjust for navbar height
+      behavior: 'smooth'
+    });
+  };
+
   // Toggle the menu open/close state
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,7 +22,7 @@ export default function Navbar(props) {
 
   return (
     <>
-      <nav className={`${props.state === 'dark'? 'bg-black': 'bg-[#f3f3f3]'}  h-[80px] flex justify-between items-center px-4 md:px-8`}>
+      <nav className={`${props.state === 'dark'? 'bg-black': 'bg-[#f3f3f3]'} w-full fixed h-[80px] flex z-10 justify-between items-center px-4 md:px-8`}>
         <div>
           <img className="w-[120px] md:w-[100px]" src="images/logo.png" alt="Logo" />
         </div>
@@ -36,13 +45,13 @@ export default function Navbar(props) {
 
         {/* Menu items for desktop (hidden on mobile) */}
         <div className={`hidden md:flex ${props.state === 'dark'? 'bg-black': 'bg-[#f3f3f3]'}`}>
-          <ul className={`inline-flex space-x-5 ${props.state === 'dark'? 'text-white': ''}`}>
-            <li className="mt-5">Home</li>
-            <li className="mt-5">About</li>
-            <li className="mt-5">Properties</li>
-            <li className="mt-5">Services</li>
-            <li className="mt-5">Testimonials</li>
-            <li className="mt-5">Contact</li>
+          <ul className={`inline-flex space-x-8 pb-4 ${props.state === 'dark'? 'text-white': ''}`}>
+            <li className="mt-5" onClick={(e) => scrollToSection(e, 'home')}><a href="#home">Home</a></li>
+            <li className="mt-5" onClick={(e) => scrollToSection(e, 'about')}><a href="#about">About</a></li>
+            <li className="mt-5" onClick={(e) => scrollToSection(e, 'property')}><a href="#property">Properties</a></li>
+            <li className="mt-5" onClick={(e) => scrollToSection(e, 'services')}><a href="#services">Services</a></li>
+            <li className="mt-5" onClick={(e) => scrollToSection(e, 'testimonials')}><a href="#testimonials">Testimonials</a></li>
+            <li className="mt-5" onClick={(e) => scrollToSection(e, 'contact')}><a href="#contact">Contact</a></li>
           </ul>
         </div>
 

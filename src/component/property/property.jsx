@@ -18,16 +18,16 @@ export default function Property(props) {
     }, []);
 
   return (
-    <div className='mt-[5%] w-[95%] bg-transparent m-auto pt-10'>
+    <div id='property' className='mt-[5%] w-[95%] bg-transparent m-auto pt-10 '>
       <div>
         <h1 data-aos='zoom-in' className={`${props.state === 'dark'? 'text-white':'text-red-600'} `}>PROPERTIES</h1>
         <h1 data-aos='zoom-in' className={`${props.state === 'dark'? 'text-white':'text-black'} text-4xl font-semibold`}>Explore the latest properties available</h1>
       </div>
-        <div className='flex justify-center flex-wrap gap-8'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-[3%]'>
         {property.map((value)=>{
                         return(
-                            <div data-aos='zoom-in' key={value.id} className={`${props.state === 'dark'?'bg-gray-800':' bg-white'} w-full  lg:w-[300px] lg:h-[520px] rounded-lg mt-[5%]`}>
-                        <div className='h-[250px] lg:w-[300px] lg:h-[250px] bg-center bg-cover relative rounded-lg px-2' style={{backgroundImage: `url(${value.image})`}}>
+                            <div data-aos='zoom-in' key={value.id} className={`${props.state === 'dark'?'bg-gray-800':' bg-white'} w-full  lg:h-[510px] rounded-lg`}>
+                        <div className='h-[250px] bg-center bg-cover relative rounded-lg px-2' style={{backgroundImage: `url(${value.image})`}}>
                             <div className='flex justify-between text-white'>
                                 <p className='mt-3 px-3 py-1 rounded-2xl bg-red-600'>Featured</p>
                                 <div className='mt-4'>
@@ -47,7 +47,7 @@ export default function Property(props) {
                         </div>
             
                         <div>
-                            <h1 className={`${props.state === 'dark'? 'text-white':'text-black'}  text-2xl font-semibold px-5`}>{value.title}</h1>
+                            <h1 className={`${props.state === 'dark'? 'text-white':'text-black'}  text-xl font-semibold px-5`}>{value.title}</h1>
                             <h1 className={`${props.state === 'dark'?'text-white':'text-red-600 '} text-2xl font-bold my-3 px-5`}>{value.price}</h1>
                             <p className={`${props.state === 'dark'? 'text-white':''} px-5`}>{value.description}</p>
                             <div className='flex lg:justify-between px-3 pt-4'> 
@@ -62,7 +62,7 @@ export default function Property(props) {
                               </div>
                             </div>
                             <hr/>
-                            <div className='flex justify-evenly items-center mt-3'>
+                            <div className='flex justify-between items-center mt-3 mx-4 pb-4'>
                                 <div>
                                 <IoMdContact className='text-red-400 text-[35px] inline px-2'/><span className={`${props.state === 'dark'? 'text-white':''}`}>{value.icontext2}</span>
                                 </div>
